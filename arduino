@@ -1,0 +1,76 @@
+// Управление яркостью светодиода в зависимости от температуры
+// Используется датчик температуры LM35 или TMP36 и PWM для управления яркостью
+
+// Пины
+const int TEMP_SENSOR_PIN = A0;  // Аналоговый вход для датчика температуры
+const int LED_PIN = 3;            // PWM пин для светодиода (3, 5, 6, 9, 10, 11)
+
+// Параметры
+const float TEMP_MIN = 15.0;      // Минимальная температура (светодиод выключен)
+const float TEMP_MAX = 35.0;      // Максимальная температура (светодиод на полную яркость)
+const int BRIGHTNESS_MIN = 0;     // Минимальная яркость
+const int BRIGHTNESS_MAX = 255;   // Максимальная яркость
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_PIN, OUTPUT);
+  
+  Serial.println("=== Управление яркостью LED по температуре ===");
+  Serial.println("Диапазон температур: " + String(TEMP_MIN) + "°C - " + String(TEMP_MAX) + "°C");
+}
+
+void loop() {
+  // Читаем значение с датчика температуры
+  float temperature = readTemperature();
+  
+  // Вычисляем яркость на основе температуры
+  int brightness = calculateBrightness(temperature);
+  
+  // Устанавливаем яркость светодиода
+  analogWrite(LED_PIN, brightness);
+  
+  // Выводим информацию в Serial
+  Serial.print("Температура: ");
+  Serial.print(temperature);
+  Serial.print("°C | Яркость: ");
+  Serial.print(brightness);
+  Serial.println("/255");
+  
+  delay(1000);  // Обновление каждую секунду
+}
+
+// Функция для чтения температуры (LM35/TMP36)
+float readTemperature() {
+  int rawValue = analogRead(TEMP_SENSOR_PIN);
+  
+  // Преобразование для LM35 (10 мВ на °C)
+  // Напряжение = rawValue * (5.0 / 1023.0)
+  // Температура = Напряжение * 100
+  float voltage = rawValue * (5.0 / 1023.0);
+  float temperature = voltage * 100.0;
+  
+  // Альтернатива для TMP36 (раскомментировать при использовании TMP36):
+  // float voltage = rawValue * (5.0 / 1023.0);
+  // float temperature = (voltage - 0.5) * 100.0;
+  
+  return temperature;
+}
+
+// Функция для расчета яркости на основе температуры
+int calculateBrightness(float temperature) {
+  // Если температура ниже минимума - светодиод выключен
+  if (temperature <= TEMP_MIN) {
+    return BRIGHTNESS_MIN;
+  }
+  
+  // Если температура выше максимума - полная яркость
+  if (temperature >= TEMP_MAX) {
+    return BRIGHTNESS_MAX;
+  }
+  
+  // Линейная интерполяция между минимумом и максимумом
+  float ratio = (temperature - TEMP_MIN) / (TEMP_MAX - TEMP_MIN);
+  int brightness = (int)(BRIGHTNESS_MIN + ratio * (BRIGHTNESS_MAX - BRIGHTNESS_MIN));
+  
+  return brightness;
+}
