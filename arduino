@@ -9,7 +9,7 @@ const int LED_PIN = 3;            //
 const float TEMP_MIN = 9.0;      // Минимальная температура 
 const float TEMP_MAX = 41.0;      // Максимальная температура 
 const int BRIGHTNESS_MIN = 0;     // Минимальная яркость
-const int BRIGHTNESS_MAX = 255;   // Максимальная яркость
+const int BRIGHTNESS_MAX = 255;   // Максимальная 
 
 void setup() {
   Serial.begin(9600);
