@@ -20,7 +20,7 @@ void setup() {
 }
 
 void loop() {
-  // Читаем значение с датчика температуры
+  // Читаем 
   float temperature = readTemperature();
   
   // Вычисляем яркость на основе температуры
