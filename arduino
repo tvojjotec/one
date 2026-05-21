@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(LED_PIN, OUTPUT);
   
-  Serial.println("=== Управление яркостью LED по температуре ===");
+  Serial.println("=== Управление яркостью LED  ===");
   Serial.println("Диапазон температур: " + String(TEMP_MIN) + "°C - " + String(TEMP_MAX) + "°C");
 }
 
