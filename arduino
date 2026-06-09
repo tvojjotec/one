@@ -23,7 +23,7 @@ void loop() {
   // Читаем 
   float temperature = readTemperature();
   
-  // Вычисляем яркость на основе температуры
+  
   int brightness = calculateBrightness(temperature);
   
   // Устанавливаем яркость светодиода
