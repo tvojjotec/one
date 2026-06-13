@@ -36,7 +36,7 @@ void loop() {
   Serial.print(brightness);
   Serial.println("/255");
   
-  delay(1000);  // Обновление каждую секунду
+  delay(1000);  
 }
 
 // Функция для чтения температуры (LM35/TMP36)
