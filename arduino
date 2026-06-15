@@ -26,7 +26,7 @@ void loop() {
   
   int brightness = calculateBrightness(temperature);
   
-  // Устанавливаем яркость светодиода
+  // Устанавливаем яркость 
   analogWrite(LED_PIN, brightness);
   
   // Выводим информацию в Serial
