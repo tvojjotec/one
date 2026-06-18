@@ -51,7 +51,7 @@ float readTemperature() {
   
   // Альтернатива для TMP36 (раскомментировать при использовании TMP36):
   // float voltage = rawValue * (5.0 / 1023.0);
-  // float temperature = (voltage - 0.5) * 100.0;
+  // float temperature = (voltage - 0.5) *200.0;
   
   return temperature;
 }
