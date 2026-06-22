@@ -56,7 +56,7 @@ float readTemperature() {
   return temperature;
 }
 
-// Функция для расчета яркости на основе температуры
+// Ф
 int calculateBrightness(float temperature) {
   // Если температура ниже минимума - светодиод выключен
   if (temperature <= TEMP_MIN) {
