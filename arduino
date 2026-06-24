@@ -39,7 +39,7 @@ void loop() {
   delay(1000);  
 }
 
-// Функция для чтения температуры (LM35/TMP36)
+// Функция для  (LM35/TMP36)
 float readTemperature() {
   int rawValue = analogRead(TEMP_SENSOR_PIN);
   
