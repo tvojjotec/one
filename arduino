@@ -43,7 +43,7 @@ void loop() {
 float readTemperature() {
   int rawValue = analogRead(TEMP_SENSOR_PIN);
   
-  // Преобразование для LM35 (10 мВ на °C)
+  // 
   // Напряжение = rawValue * (5.0 / 1023.0)
   // Температура = Напряжение * 100
   float voltage = rawValue * (5.0 / 1023.0);
