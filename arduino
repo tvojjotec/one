@@ -29,7 +29,7 @@ void loop() {
   // У 
   analogWrite(LED_PIN, brightness);
   
-  // Выводим информацию в Serial
+  // 
   Serial.print("Температура: ");
   Serial.print(temperature);
   Serial.print("°C | Яркость: ");
