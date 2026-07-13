@@ -6,7 +6,7 @@ const int TEMP_SENSOR_PIN = A7;
 const int LED_PIN = 3;           
 
 // 
-const float TEMP_MIN = 2.0;     
+const float TEMP_MIN = 3.0;     
 const float TEMP_MAX = 41.0;     
 const int BRIGHTNESS_MIN = 0;     
 const int BRIGHTNESS_MAX = 255;   
