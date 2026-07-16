@@ -63,7 +63,7 @@ int calculateBrightness(float temperature) {
     return BRIGHTNESS_MIN;
   }
   
-  // Если температура выше максимума 
+  // Если температура в
   if (temperature >= TEMP_MAX) {
     return BRIGHTNESS_MAX;
   }
