@@ -9,7 +9,7 @@ const int LED_PIN = 3;
 const float TEMP_MIN = 3.0;     
 const float TEMP_MAX = 41.0;     
 const int BRIGHTNESS_MIN = 0;     
-const int BRIGHTNESS_MAX = 255;   
+const int BRIGHTNESS_MAX = 455;   
 
 void setup() {
   Serial.begin(9600);
@@ -63,7 +63,7 @@ int calculateBrightness(float temperature) {
     return BRIGHTNESS_MIN;
   }
   
-  // Если температура в
+  
   if (temperature >= TEMP_MAX) {
     return BRIGHTNESS_MAX;
   }
