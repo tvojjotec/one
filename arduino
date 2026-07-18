@@ -29,7 +29,7 @@ void loop() {
   // У 
   analogWrite(LED_PIN, brightness);
   
-  // 
+  // www
   Serial.print("Температура: ");
   Serial.print(temperature);
   Serial.print("°C | Яркость: ");
@@ -39,7 +39,7 @@ void loop() {
   delay(1000);  
 }
 
-//
+//www
 float readTemperature() {
   int rawValue = analogRead(TEMP_SENSOR_PIN);
   
