@@ -43,7 +43,6 @@ void loop() {
 float readTemperature() {
   int rawValue = analogRead(TEMP_SENSOR_PIN);
   
-  // 
   // Напряжение = rawValue * (5.0 / 1023.0)
   // Температура = Напряжение * 100
   float voltage = rawValue * (5.0 / 1023.0);
