@@ -55,9 +55,9 @@ float readTemperature() {
   return temperature;
 }
 
-// 
+
 int calculateBrightness(float temperature) {
-  //
+
   if (temperature <= TEMP_MIN) {
     return BRIGHTNESS_MIN;
   }
