@@ -67,7 +67,7 @@ int calculateBrightness(float temperature) {
     return BRIGHTNESS_MAX;
   }
   
-  // Линейная 
+ 
   float ratio = (temperature - TEMP_MIN) / (TEMP_MAX - TEMP_MIN);
   int brightness = (int)(BRIGHTNESS_MIN + ratio * (BRIGHTNESS_MAX - BRIGHTNESS_MIN));
   
